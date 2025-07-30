@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-export const RouterProvider = () => {
+export const MyProvider = () => {
   return (
     <BrowserRouter basename="/photoscollection">
       <App />
