@@ -9,7 +9,9 @@ import {Pagination} from './Components/Pagination/Pagination';
     { "name": "Море" },
     { "name": "Горы" },
     { "name": "Архитектура" },
-    { "name": "Города" }
+    { "name": "Города" },
+    { "name": "Автомобили"},
+    { "name": "Мемы"}
   ];
 
 function App() {
@@ -38,6 +40,11 @@ function App() {
       .finally(() => setIsLoading(false));
   }, [categoryId, page]);
 
+  useEffect(() => {
+    setPage(1);
+    setSearchValue('');
+  }, 
+    [categoryId])
 
   return (
     <div className="App">
