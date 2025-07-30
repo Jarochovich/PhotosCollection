@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/photoscollection'>
+    <BrowserRouter basename='/PhotosCollection'>
       <Routes>
           <Route path='/'>
             <Route index element={<App />} />
