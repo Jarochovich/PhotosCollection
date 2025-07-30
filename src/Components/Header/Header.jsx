@@ -1,18 +1,20 @@
-import classes from './Header.module.css';
+export function Header({searchValue, fnSearchValue, listCategories, categoryId, setCategoryId}) {
 
-function Header(props) {
     return (
     <div className="top">
         <ul className="tags">
-          <li className="active">Все</li>
-          <li>Горы</li>
-          <li>Море</li>
-          <li>Архитектура</li>
-          <li>Города</li>
+          {
+            listCategories.map((obj, i) => <li className={i === categoryId ? 'active' : ''} 
+                                               onClick={() => setCategoryId(i)}
+                                               key={obj.name}>
+                                                {obj.name}
+                                            </li>)
+          }
         </ul>
-        <input className="search-input" placeholder="Поиск по названию" />
+        <input value={searchValue} 
+               onChange={(e) => fnSearchValue(e.target.value)} 
+               className="search-input" 
+               placeholder="Поиск по названию" />
       </div>
     );
 }
-
-export default Header;
